@@ -1,19 +1,24 @@
 
+
 let sourceJs ={
+
 scriptsJs: () => {
+
     scriptsName = ["akuma", "alisa", "asuka", "bryan",
          "claudio", "devil-jin", "dragunov", "eliza",
           "heihachi", "hwoarang", "jack-7", "jin", 
          "josie", "katarina", "kazumi", "kazuya", "king", "lars", 
          "law", "lee", "leo", "lili", "ling", "lucky-chloe", "master-raven", 
          "miguel", "nina", "paul", "shaheen", "steve", "yoshimitsu"];
-    for (let i = 0; i < scriptsName.length; i++)
-{ 
+    for (let i = 0; i < scriptsName.length; i++){ 
+
     let scriptElem = document.createElement("script");
     scriptElem.setAttribute("src", "character-data/" + scriptsName[i] + ".js");
     document.getElementsByTagName("head")[0].appendChild(scriptElem);
+    
 };
 },
+
 charList: () => {
         let char = [akuma, alisa, asuka, bryan,
          claudio, devilJin, dragunov, eliza,
@@ -44,12 +49,16 @@ charList: () => {
             console.log(charDetails[i])  
         }
             // Single Char
+            // console.log(charDetails[2])
 },
+    homePage: () => {
+        let app = document.getElementById('app');
+
+},  
 
 init: () => {
        sourceJs.scriptsJs();
-       setTimeout( ()  => {
-        sourceJs.charList();
-       }, 600);
+       setTimeout( ()  => { sourceJs.charList(); }, 1000);
+       sourceJs.homePage();
 },
 };
