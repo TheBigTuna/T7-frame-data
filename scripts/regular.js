@@ -51,14 +51,16 @@ charList: () => {
             // Single Char
             // console.log(charDetails[2])
 },
-    homePage: () => {
+    homeClick: () => {
+        let home = document.getElementById('home');
         let app = document.getElementById('app');
-
+        let headerBtn = document.getElementById('headerBtn');
+        home.style.display="none";
+        app.style.display="block";
 },  
 
 init: () => {
        sourceJs.scriptsJs();
        setTimeout( ()  => { sourceJs.charList(); }, 1000);
-       sourceJs.homePage();
 },
 };
