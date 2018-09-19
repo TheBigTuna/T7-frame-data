@@ -31,15 +31,17 @@ charList: () => {
         let name = list.metadata.name;
         let game = list.metadata.game;
         let moves = list.moves;
+        let character = list.metadata.character;
         let gifs = list.gifs;
            if(list.gifs == undefined){
-               let noGif = {name : name, game : game, moves: moves, gifs : "Not Available"};
+               let noGif = {name : name, game : game, moves: moves, character: character, gifs : "Not Available"};
              return noGif;
      }  
         return {
             name: name,
             game: game,
             moves: moves,
+            character: character,
             gifs: gifs,
         } 
         });
@@ -47,19 +49,28 @@ charList: () => {
         for (i = 0; i < charDetails.length; i++) {
             // Entire Char List
             console.log(charDetails[i])  
+            $("#appList").append("<li id=" + charDetails[i].character + ">" + charDetails[i].name + "</li>");
+
         }
             // Single Char
             // console.log(charDetails[2])
 },
+    load: () => {
+            $("#loading").fadeOut(1000);
+            $("#home").fadeIn(500);
+    },
+
     homeClick: () => {
         let home = document.getElementById('home');
         let app = document.getElementById('app');
         let headerBtn = document.getElementById('headerBtn');
         home.style.display="none";
         app.style.display="block";
+
 },  
 
 init: () => {
+      
        sourceJs.scriptsJs();
        setTimeout( ()  => { sourceJs.charList(); }, 1000);
 },
