@@ -102,6 +102,9 @@ header.masthead p {
   header.masthead p {
     font-size: 1.15rem;
   }
+  #appList li{
+  width: 50%;
+}
 }
 
 @media (min-width: 992px) {
@@ -114,12 +117,20 @@ header.masthead p {
   header.masthead h1 {
     font-size: 3rem;
   }
+
+  #appList .appChar{
+  list-style-type: none;
+  width: 70%;
+}
 }
 
 @media (min-width: 1200px) {
   header.masthead h1 {
     font-size: 4rem;
   }
+  #appList .appChar{
+  width: 60%;
+}
 }
 
 
@@ -150,4 +161,27 @@ header.masthead p {
   box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
 }
 
+#app{
+   background-color: #fff;
+
+}
+
+#appList{
+  margin: 3em 0em 0em 5em;
+}
+
+#appList .appChar{
+  list-style-type: none;
+  width: 90%;
+  margin-bottom: 10px;
+  font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 1.4em;
+
+}
+
+#appList .list-group-item:hover{
+  background-color: #d0011b;
+  color: white;
+  cursor: pointer;
+}
 

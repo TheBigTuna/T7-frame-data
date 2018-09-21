@@ -33,27 +33,44 @@ charList: () => {
         let moves = list.moves;
         let character = list.metadata.character;
         let gifs = list.gifs;
+        
            if(list.gifs == undefined){
                let noGif = {name : name, game : game, moves: moves, character: character, gifs : "Not Available"};
              return noGif;
      }  
+
         return {
+
             name: name,
             game: game,
             moves: moves,
             character: character,
             gifs: gifs,
+            
         } 
         });
 
         for (i = 0; i < charDetails.length; i++) {
             // Entire Char List
-            console.log(charDetails[i])  
-            $("#appList").append("<li id=" + charDetails[i].character + ">" + charDetails[i].name + "</li>");
+
+            // console.log(charDetails[i])  
+            $("#appList").append("<div id = " + charDetails[i].character + " class = 'appChar list-group-item'>" + "<h4>" + charDetails[i].name + "</h4>" + "</div>");
 
         }
             // Single Char
-            // console.log(charDetails[2])
+
+            //  $('.charMoves').on('click', (e) => {
+            //  e.preventDefault()
+            // console.log(this);
+            // });
+            // <----------------------------------------------------------------------------------------------------------------------------------->
+
+            // grabMoves = (c) => {
+            // for (a = 0; a < charDetails[c].moves.length; a++){
+            //     console.log(charDetails[c].moves[a]);
+            // }
+            // }
+            // grabMoves();
 },
     load: () => {
             $("#loading").fadeOut(1000);
@@ -68,10 +85,31 @@ charList: () => {
         app.style.display="block";
 
 },  
+    ui: () => {
+            
+             $('.appChar').on('click', function (a) {
+                 let check = $(this).hasClass('on');
+                 $(this).css("display", "block");
+                 $(this).addClass('on');
+                 console.log(this);
+                 console.log(check);
+                 
+            //  $(".appChar").append("<ul></ul>");
+            //  $(".appChar ul").append("<li class = 'charMoves'>Moves</li>");
+            //  $(".appChar ul").append("<li class = 'charGifs'>Gifs</li>");
+
+             if (check == true){
+                 $(this).removeClass('on');
+                 $(this).addClass('off');
+                 console.log('hi')
+             }
+             });
+             
+    },
 
 init: () => {
-      
        sourceJs.scriptsJs();
        setTimeout( ()  => { sourceJs.charList(); }, 1000);
+       setTimeout( ()  => { sourceJs.ui(); }, 1200);
 },
 };
