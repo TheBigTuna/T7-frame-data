@@ -180,8 +180,62 @@ header.masthead p {
 }
 
 #appList .list-group-item:hover{
-  background-color: #d0011b;
-  color: white;
+  /*background-color: #d0011b;*/
+  /*color: white;*/
   cursor: pointer;
 }
 
+.charMoves{
+  z-index: 10;
+}
+
+.charGifs{
+  z-index: 10;
+}
+
+.charMoves, .charGifs{
+  background-color: beige;
+
+}
+
+.appChar .notation{
+  width: 50%;
+  float: left;
+}
+
+.game{
+  text-transform: uppercase;
+}
+.appChar .hit-level{
+  width: 10%;
+}
+
+.modal-background{
+   display: none;
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   background-color:rgba(0,0,0,0.6);
+   z-index: 20;
+
+}
+
+.modal-box{
+    width: 400px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    background: #ffffff;
+    color: #333333;
+    overflow: scroll;
+
+}
+
+.modal-close{
+  cursor: pointer;
+  padding: 5px;
+}
