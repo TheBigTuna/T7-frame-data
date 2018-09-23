@@ -20,7 +20,7 @@ scriptsJs: () => {
 },
 
 charList: () => {
-        let char = [akuma, alisa, asuka, bryan,
+        let char = [akuma, alisa, asuka, bob, bryan,
          claudio, devilJin, dragunov, eliza,
           heihachi, hwoarang, jack7, jin, 
          josie, katarina, kazumi, kazuya, king, lars, 
@@ -28,7 +28,6 @@ charList: () => {
          miguel, nina, paul, shaheen, steve, yoshimitsu]; 
 
          characterArray.push(char);
-         console.log(characterArray)
 
     let charDetails = char.map((list) => {
         let name = list.metadata.name;
@@ -53,36 +52,7 @@ charList: () => {
             
         } 
         });
-
-        let charArray = [];
-        let movesArray = [];
-
-
-
-
-
-            
-                        
-            displayMoves = (b,c) => {
-                // console.log(akuma.moves.length)
-                for(a=0; a < b.moves.length; a++){
-                $(document).find('.body-box' + c).append("<p class='notation'>" + b.moves[a].notation + "</p>");
-                $(document).find('.body-box' + c).append("<p class='hit-level'>" + b.moves[a].hit_level + "</p>");
-                $(document).find('.body-box' + c).append("<p class='damage'>" + b.moves[a].damage + "</p>");
-                $(document).find('.body-box' + c).append("<p class='on-block'>" + b.moves[a].on_block + "</p>");
-                $(document).find('.body-box' + c).append("<p class='on-ch'>" + b.moves[a].on_ch + "</p>");
-                $(document).find('.body-box' + c).append("<p class='on-hit'>" + b.moves[a].on_hit + "</p>");
-            
-                }
-             $(document).find('.header-box' + c).append("<p>" + b.metadata.name + "</p>");
-             console.log(b);
-            }
-
-
-
-
-
-
+                         
         for (i = 0; i < charDetails.length; i++) {
             // Entire Char List
 
@@ -91,8 +61,33 @@ charList: () => {
              $('#appList').append("<ul class = 'objList' value = " + [i] + "></ul>");
              $('#appList').append("<li class = 'charMoves list-group-item' value = " + [i] + ">Moves</li>");
              $('#appList').append("<li class = 'charGifs list-group-item' value = " + [i] + ">Gifs</li>");
-             charArray.push(charDetails[i]);
+             characterArray.push(charDetails[i]);
+             
         }
+
+         displayMoves = (b,c) => {
+             for(a = 0; a < b.moves.length; a++){
+                $(document).find('.body-box' + c).append("<p class='notation'>" + b.moves[a].notation + "</p>");
+                $(document).find('.body-box' + c).append("<p class='hit-level'>" + b.moves[a].hit_level + "</p>");
+                $(document).find('.body-box' + c).append("<p class='damage'>" + b.moves[a].damage + "</p>");
+                $(document).find('.body-box' + c).append("<p class='on-block'>" + b.moves[a].on_block + "</p>");
+                $(document).find('.body-box' + c).append("<p class='on-ch'>" + b.moves[a].on_ch + "</p>");
+                $(document).find('.body-box' + c).append("<p class='on-hit'>" + b.moves[a].on_hit + "</p>");
+            
+             }
+                $(document).find('.header-box' + c).append("<p>" + b.metadata.name + "</p>");
+        }
+
+        displayGifs = () =>{
+            for(d = 0; d < characterArray[0].length; d++){
+
+            console.log(characterArray[0][d].metadata.name)
+            }
+            $(document).find('.header-box' + [0]).append("<p>" + characterArray[0][0].metadata.name + "</p>");
+
+        }
+
+
 
             // Single Char
 
@@ -153,8 +148,6 @@ charList: () => {
                 let charBodyValue;
 
              $('.charMoves').click(function (){
-                    // console.log(this);
-                    // console.log(charHeadValue);
                     charHeadValue = this.value;
                     charBodyValue = this.value;
                     $('.modal-background').css('display', 'block');
@@ -167,6 +160,12 @@ charList: () => {
 
               $('.charGifs').click(function (){
                     console.log(this);
+                     charHeadValue = this.value;
+                    charBodyValue = this.value;
+                    $('.modal-background').css('display', 'block');
+                    $('.modal-header').addClass("header-box" + this.value);
+                    $('.modal-body').addClass("body-box" + this.value);
+                    displayGifs();
              });
                 $('.modal-close').click(function (){                
                     $('.modal-background').css('display', 'none');
