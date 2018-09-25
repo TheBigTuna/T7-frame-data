@@ -179,23 +179,17 @@ header.masthead p {
 
 }
 
-#appList .list-group-item:hover{
+.charMoves:hover, .charGifs:hover{
   /*background-color: #d0011b;*/
   /*color: white;*/
   cursor: pointer;
-}
-
-.charMoves{
-  z-index: 10;
-}
-
-.charGifs{
-  z-index: 10;
+  background-color: #EDEDD5;
 }
 
 .charMoves, .charGifs{
-  background-color: beige;
-
+  background-color: #F5F5DC;
+  z-index: 10;
+  margin: 5px 0px;
 }
 
 .appChar .notation{
@@ -233,7 +227,7 @@ header.masthead p {
     background: #ffffff;
     color: #333333;
     overflow: scroll;
-
+    white-space:nowrap
 }
 
 .modal-close{
@@ -256,6 +250,7 @@ header.masthead p {
   float: left;
   box-sizing:border-box;
   font-size: 14px;
+  overflow: hidden;
 }
 
 .hit-level, .damage, .on-block, .on-ch, .on-hit{
@@ -263,8 +258,10 @@ header.masthead p {
   float: left;
   box-sizing:border-box;
   font-size: 14px;
+  overflow: hidden;
 
 }
+
 
 
 

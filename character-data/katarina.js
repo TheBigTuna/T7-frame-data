@@ -1,5 +1,14 @@
 let katarina = {
   "moves": [{
+    "notation": "NOTATION",
+    "hit_level": "HIT LEVEL",
+    "damage": "DAMAGE",
+    "speed": "SPEED",
+    "on_block": "ON BLOCK",
+    "on_hit": "ON HIT",
+    "on_ch": "ON CH",
+    "notes": "NOTES"
+  },{
     "notation": "in rage 3+4",
     "hit_level": "m",
     "damage": "60",

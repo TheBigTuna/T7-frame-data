@@ -78,12 +78,14 @@ charList: () => {
                 $(document).find('.header-box' + c).append("<p>" + b.metadata.name + "</p>");
         }
 
-        displayGifs = () =>{
+        displayGifs = (e,f) =>{
             for(d = 0; d < characterArray[0].length; d++){
 
-            console.log(characterArray[0][d].metadata.name)
+                // console.log(characterArray[0][d].gifs)
+            // $(document).find('.body-box' + f).append("<p>" + characterArray[0][d].gifs + "</p>");
             }
-            $(document).find('.header-box' + [0]).append("<p>" + characterArray[0][0].metadata.name + "</p>");
+            $(document).find('.header-box' + [f]).append("<p>" + e.metadata.name + "</p>");
+                // console.log(e.gifs);
 
         }
 
@@ -159,13 +161,12 @@ charList: () => {
              });
 
               $('.charGifs').click(function (){
-                    console.log(this);
-                     charHeadValue = this.value;
+                    charHeadValue = this.value;
                     charBodyValue = this.value;
                     $('.modal-background').css('display', 'block');
                     $('.modal-header').addClass("header-box" + this.value);
                     $('.modal-body').addClass("body-box" + this.value);
-                    displayGifs();
+                    displayGifs(characterArray[0][this.value],this.value);
              });
                 $('.modal-close').click(function (){                
                     $('.modal-background').css('display', 'none');

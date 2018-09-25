@@ -1,5 +1,14 @@
 let miguel = {
   "moves": [{
+    "notation": "NOTATION",
+    "hit_level": "HIT LEVEL",
+    "damage": "DAMAGE",
+    "speed": "SPEED",
+    "on_block": "ON BLOCK",
+    "on_hit": "ON HIT",
+    "on_ch": "ON CH",
+    "notes": "NOTES"
+  },{
     "notation": "in rage b+1+2",
     "hit_level": "m",
     "damage": null,

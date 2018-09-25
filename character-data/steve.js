@@ -1,5 +1,14 @@
 let steve = {
   "moves": [{
+    "notation": "NOTATION",
+    "hit_level": "HIT LEVEL",
+    "damage": "DAMAGE",
+    "speed": "SPEED",
+    "on_block": "ON BLOCK",
+    "on_hit": "ON HIT",
+    "on_ch": "ON CH",
+    "notes": "NOTES"
+  },{
     "notation": "in rage 1+2 or WS?1+2",
     "hit_level": "h",
     "damage": null,
