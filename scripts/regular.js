@@ -56,11 +56,11 @@ charList: () => {
         for (i = 0; i < charDetails.length; i++) {
             // Entire Char List
 
-            // console.log(charDetails[i])  
-             $("#appList").append("<div id = " + charDetails[i].character + " class = 'appChar off char"+ [i] + " list-group-item' value = " + [i] + ">" + "<h4>" + charDetails[i].name + " " + "<span class='game'>" + charDetails[i].game + "</span></h4>" + "</div>");
+             console.log(charDetails[i])  
+             $("#appList").append("<div id = " + charDetails[i].character + " class = 'appChar off char"+ [i] + " list-group-item' value = " + [i] + ">" + "<h4>" + charDetails[i].character + " " + "<span class='game'>" + charDetails[i].game + "</span></h4>" + "</div>");
              $('#appList').append("<ul class = 'objList' value = " + [i] + "></ul>");
              $('#appList').append("<li class = 'charMoves list-group-item' value = " + [i] + ">Moves</li>");
-             $('#appList').append("<li class = 'charGifs list-group-item' value = " + [i] + ">Gifs</li>");
+            //  $('#appList').append("<li class = 'charGifs list-group-item' value = " + [i] + ">Gifs</li>");
              characterArray.push(charDetails[i]);
              
         }
@@ -142,6 +142,13 @@ charList: () => {
         app.style.display="block";
 
 },  
+    prevClick: () => {
+        let home = document.getElementById('home');
+        let app = document.getElementById('app');
+        let prevBtn = document.getElementById('prevBtn');
+        app.style.display="none";
+        home.style.display="block";
+    },
     ui: () => {
             //  $('.appChar').append("<ul class = 'objList'></ul>");
             //  $('.appChar').append("<li class = 'charMoves list-group-item'>Moves</li>");
@@ -195,10 +202,28 @@ charList: () => {
             //  });
              
     },
+    scroll: () => {
+            $(document).on('scroll',function(){
+                var pos = $(window).scrollTop();
+                if(pos > 120){
+                    $('.scroll').css('display', 'block');
+                }
+                else{
+                    $('.scroll').css('display', 'none');
+                }
+            });
+
+                $('.scroll').click(function(){
+                $('html, body').animate({   
+                        scrollTop: 0
+                    }, 900);
+                });
+    },
 
 init: () => {
        sourceJs.scriptsJs();
-       setTimeout( ()  => { sourceJs.charList(); }, 1000);
-       setTimeout( ()  => { sourceJs.ui(); }, 1200);
+       setTimeout( ()  => { sourceJs.charList(); }, 1600);
+       setTimeout( ()  => { sourceJs.ui(); }, 1800);
+       sourceJs.scroll();
 },
 };
