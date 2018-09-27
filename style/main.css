@@ -97,20 +97,14 @@ header.masthead h1 {
 header.masthead p {
   font-weight: 300;
 }
-
-@media (min-width: 768px) and (max-width: 991px) {
-  header.masthead p {
-    font-size: 1.15rem;
-  }
-
-  .modal-box{
-    min-width: 730px;
-    max-height: 400px;
+@media (max-width: 576px) {
+.modal-box{
+    min-width: 570px;
+    max-height: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 2em;
     background: #ffffff;
     color: #333333;
     overflow-x: hidden;
@@ -119,7 +113,72 @@ header.masthead p {
 }
 
 .notation{
-  min-width: 160px;
+  min-width: 130px;
+  float: left;
+  box-sizing:border-box;
+  font-size: 10px;
+  overflow: hidden;
+}
+
+.hit-level, .damage, .on-block, .on-ch, .on-hit{
+  min-width: 65px;
+  float: left;
+  box-sizing:border-box;
+  font-size: 10px;
+  overflow: hidden;
+
+}
+
+}
+@media (min-width: 577px) and (max-width: 650px) {
+  .modal-box{
+    min-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    color: #333333;
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space:nowrap
+}
+
+.notation{
+  min-width: 130px;
+  float: left;
+  box-sizing:border-box;
+  font-size: 10px;
+  overflow: hidden;
+}
+
+.hit-level, .damage, .on-block, .on-ch, .on-hit{
+  min-width: 65px;
+  float: left;
+  box-sizing:border-box;
+  font-size: 10px;
+  overflow: hidden;
+
+}
+
+}
+@media (min-width: 651px) and (max-width: 767px) {
+    .modal-box{
+    min-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    color: #333333;
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space:nowrap
+}
+.notation{
+  min-width: 175px;
   float: left;
   box-sizing:border-box;
   font-size: 12px;
@@ -127,7 +186,7 @@ header.masthead p {
 }
 
 .hit-level, .damage, .on-block, .on-ch, .on-hit{
-  min-width: 90px;
+  min-width: 70px;
   float: left;
   box-sizing:border-box;
   font-size: 12px;
@@ -136,9 +195,44 @@ header.masthead p {
 }
 
 
-  #appList li{
-  width: 50%;
 }
+@media (min-width: 768px) and (max-width: 991px) {
+  header.masthead p {
+    font-size: 1.15rem;
+  }
+
+  .modal-box{
+    min-width: 760px;
+    max-height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.2em;
+    background: #ffffff;
+    color: #333333;
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space:nowrap
+}
+
+.notation{
+  min-width: 170px;
+  float: left;
+  box-sizing:border-box;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.hit-level, .damage, .on-block, .on-ch, .on-hit{
+  min-width: 95px;
+  float: left;
+  box-sizing:border-box;
+  font-size: 12px;
+  overflow: hidden;
+
+}
+
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -186,8 +280,8 @@ header.masthead p {
 
   #appList .appChar{
   list-style-type: none;
-  width: 70%;
 }
+
 }
 
 @media (min-width: 1200px) {
@@ -271,37 +365,29 @@ header.masthead p {
 
 #appList .appChar{
   list-style-type: none;
-  width: 90%;
   margin-bottom: 10px;
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
   font-size: 1.4em;
 
 }
 
-.charMoves:hover, .charGifs:hover{
-  /*background-color: #d0011b;*/
-  /*color: white;*/
-  cursor: pointer;
-  background-color: #EDEDD5;
-}
 
 .charMoves, .charGifs{
   background-color: #F5F5DC;
   z-index: 10;
   margin: 5px 0px;
+  text-align: center;
 }
 
-.appChar .notation{
-  width: 50%;
-  float: left;
+.charMoves:hover, .charGifs:hover{
+  cursor: pointer;
+  background-color: #EDEDD5;
 }
 
 .game{
   text-transform: uppercase;
 }
-.appChar .hit-level{
-  width: 10%;
-}
+
 
 .modal-background{
    display: none;
@@ -363,7 +449,9 @@ header.masthead p {
 
 .appChar h4{
   text-transform: uppercase;
-  font-weight: 700;
+  text-align: center;
+  font-size: 1.3rem;
+  overflow: hidden;
 }
 
 .previous{
@@ -401,10 +489,10 @@ header.masthead p {
     border-color: black;
 }
 
-
-
-
-
-
+.list-group-item{
+  width: 60%;
+  position: relative;
+  left: 15%;
+}
 
 

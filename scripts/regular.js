@@ -175,6 +175,7 @@ charList: () => {
                     $('.modal-body').addClass("body-box" + this.value);
                     displayGifs(characterArray[0][this.value],this.value);
              });
+             
                 $('.modal-close').click(function (){                
                     $('.modal-background').css('display', 'none');
                     $('.modal-header').removeClass("header-box" + charHeadValue);
