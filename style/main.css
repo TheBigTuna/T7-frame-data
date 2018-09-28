@@ -85,7 +85,6 @@ video{
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 56px);
-  /*background-image: url("../images/header.jpg");*/
   background-position: center center;
   background-size: cover;
 }
@@ -97,9 +96,16 @@ header.masthead h1 {
 header.masthead p {
   font-weight: 300;
 }
+@media (max-height: 550px) {
+  .masthead{
+    position: relative;
+    bottom: 120px;
+  }
+}
+
 @media (max-width: 576px) {
 .modal-box{
-    min-width: 570px;
+    min-width: 100%;
     max-height: 100%;
     position: absolute;
     top: 50%;
@@ -113,18 +119,18 @@ header.masthead p {
 }
 
 .notation{
-  min-width: 130px;
+  min-width: 80px;
   float: left;
   box-sizing:border-box;
-  font-size: 10px;
+  font-size: 6px;
   overflow: hidden;
 }
 
 .hit-level, .damage, .on-block, .on-ch, .on-hit{
-  min-width: 65px;
+  min-width: 45px;
   float: left;
   box-sizing:border-box;
-  font-size: 10px;
+  font-size: 6px;
   overflow: hidden;
 
 }
