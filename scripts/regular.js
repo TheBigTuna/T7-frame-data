@@ -55,9 +55,10 @@ charList: () => {
                          
         for (i = 0; i < charDetails.length; i++) {
             // Entire Char List
-
-            //  console.log(charDetails[i])  
-             $("#appList").append("<div id = " + charDetails[i].character + " class = 'appChar off char"+ [i] + " list-group-item' value = " + [i] + ">" + "<h4>" + charDetails[i].character + " " + "<span class='game'>" + charDetails[i].game + "</span></h4>" + "</div>");
+             let charText = charDetails[i].character;
+             let charRep = charText.replace(/-/g, " ");
+             
+             $("#appList").append("<div id = " + charDetails[i].character + " class = 'appChar off char"+ [i] + " list-group-item' value = " + [i] + ">" + "<h4>" + charRep + "</h4>" + "</div>");
              $('#appList').append("<ul class = 'objList' value = " + [i] + "></ul>");
              $('#appList').append("<li class = 'charMoves list-group-item' value = " + [i] + ">Moves</li>");
             //  $('#appList').append("<li class = 'charGifs list-group-item' value = " + [i] + ">Gifs</li>");

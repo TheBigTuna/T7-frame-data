@@ -379,7 +379,7 @@ header.masthead p {
 
 
 .charMoves, .charGifs{
-  background-color: #F5F5DC;
+  background-color: #E5E2C3;
   z-index: 10;
   margin: 5px 0px;
   text-align: center;
@@ -387,7 +387,7 @@ header.masthead p {
 
 .charMoves:hover, .charGifs:hover{
   cursor: pointer;
-  background-color: #EDEDD5;
+  background-color: #D4D1B4;
 }
 
 .game{
@@ -473,8 +473,9 @@ header.masthead p {
 
 .previous:hover{
     cursor: pointer;
-    background-color: black;
-    border-color: black;
+    background-color: #DCD6BB;
+    border-color: #DCD6BB;
+    color: black;
 }
 
 .scroll{
@@ -491,8 +492,9 @@ header.masthead p {
 }
 .scroll:hover{
     cursor: pointer;
-    background-color: black;
-    border-color: black;
+    background-color: #DCD6BB;
+    border-color: #DCD6BB;
+    color: black;
 }
 
 .list-group-item{
