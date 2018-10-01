@@ -54,14 +54,14 @@ charList: () => {
         });
                          
         for (i = 0; i < charDetails.length; i++) {
-            // Entire Char List
+
              let charText = charDetails[i].character;
              let charRep = charText.replace(/-/g, " ");
-             
+
              $("#appList").append("<div id = " + charDetails[i].character + " class = 'appChar off char"+ [i] + " list-group-item' value = " + [i] + ">" + "<h4>" + charRep + "</h4>" + "</div>");
              $('#appList').append("<ul class = 'objList' value = " + [i] + "></ul>");
              $('#appList').append("<li class = 'charMoves list-group-item' value = " + [i] + ">Moves</li>");
-            //  $('#appList').append("<li class = 'charGifs list-group-item' value = " + [i] + ">Gifs</li>");
+             $('#appList').append("<li class = 'charGifs list-group-item' value = " + [i] + ">Gifs</li>");
              characterArray.push(charDetails[i]);
              
         }
@@ -82,51 +82,9 @@ charList: () => {
         displayGifs = (e,f) =>{
             for(d = 0; d < characterArray[0].length; d++){
 
-                // console.log(characterArray[0][d].gifs)
-            // $(document).find('.body-box' + f).append("<p>" + characterArray[0][d].gifs + "</p>");
             }
             $(document).find('.header-box' + [f]).append("<p>" + e.metadata.name + "</p>");
-                // console.log(e.gifs);
-
         }
-
-
-
-            // Single Char
-
-            //  $('.charMoves').on('click', (e) => {
-            //  e.preventDefault()
-            // console.log(this);
-            // });
-            // <----------------------------------------------------------------------------------------------------------------------------------->
-
-            
-            // grabMoves = (c) => {
-            // for (a = 0; a < charDetails[c].moves.length; a++){
-            //      console.log(charDetails[c].moves[a]);
-                
-            // }
-            // }
-            // grabMoves(2);
-            // for(a=0; a < charArray.length; a++){
-            //     movesArray.push(charArray[a].moves);
-            // }
-            
-            // displayMoves = (c) => {
-            //     for(b = 0; b < movesArray.length; b++)
-            //     console.log(movesArray[b]);
-            //     // $('.char0').append(movesArray[b][c].notation)
-            // }
-            // displayMoves(0);
-        
-             
-            // displayMoves = (c) => {
-            //     for(b = 0; b < movesArray.length; b++)
-            //     console.log(movesArray[b][c]);
-            // }
-            // displayMoves(c);
-        
-
 
 
 },
@@ -151,9 +109,7 @@ charList: () => {
         home.style.display="block";
     },
     ui: () => {
-            //  $('.appChar').append("<ul class = 'objList'></ul>");
-            //  $('.appChar').append("<li class = 'charMoves list-group-item'>Moves</li>");
-            //  $('.appChar').append("<li class = 'charGifs list-group-item'>Gifs</li>");
+
                 let charHeadValue;
                 let charBodyValue;
 
@@ -184,24 +140,6 @@ charList: () => {
                     $('.modal-body').removeClass("body-box" + charBodyValue);
                     $('.modal-body p').remove();
              });
-
-            //  $('.appChar').on('click', function () {
-            //      let check = $(this).hasClass('on');
-            // if (check == false){
-            //     $(this).addClass('on');
-            //     $(this).removeClass('off');
-            //      console.log(this);
-            //  $(this).append("<ul class = 'objList'></ul>");
-            //  $(this).append("<li class = 'charMoves list-group-item''>Moves</li>");
-            //  $(this).append("<li class = 'charGifs list-group-item''>Gifs</li>");
-            //  }
-            // if (check == true){
-            //      $(this).removeClass('on');
-            //      $(this).addClass('off');
-            //      $(this).empty();
-            //  }   
-
-            //  });
              
     },
     scroll: () => {
