@@ -1,4 +1,5 @@
 let characterArray = [];
+let gifArray = [];
 
 let sourceJs ={
 
@@ -54,7 +55,7 @@ charList: () => {
         });
                          
         for (i = 0; i < charDetails.length; i++) {
-
+            // Entire Char List
              let charText = charDetails[i].character;
              let charRep = charText.replace(/-/g, " ");
 
@@ -80,11 +81,59 @@ charList: () => {
         }
 
         displayGifs = (e,f) =>{
-            for(d = 0; d < characterArray[0].length; d++){
-
-            }
             $(document).find('.header-box' + [f]).append("<p>" + e.metadata.name + "</p>");
+                        // console.log(characterArray[0][f].gifs)
+         for (let g in characterArray[0][f].gifs) {
+                //  console.log(g, characterArray[0][f].gifs[g]);
+                //  $(document).find('.body-box' + f).append("<div style='position: fixed; width: 20%; height: 20%; background-image:url("+ characterArray[0][f].gifs[g] +")'>" + "</div>");
+                    $(document).find('.body-box' + f).append("<div class='gifBtn' id = "+ characterArray[0][f].gifs[g] +" >" + "<button>" + g + "</button>" + "</div>");
+                    gifArray.push(g.length);
         }
+           $('.gifBtn').on('click',function (){
+               console.log(this.id);
+           $(document).find('.body-box' + f).append("<div style='position: absolute; width: 440px; height: 250px; margin: 20px; background-image:url("+ this.id +")'>" + "</div>");
+                    
+               });
+                // console.log(e.gifs);
+        }
+       
+
+
+            // Single Char
+
+            //  $('.charMoves').on('click', (e) => {
+            //  e.preventDefault()
+            // console.log(this);
+            // });
+            // <----------------------------------------------------------------------------------------------------------------------------------->
+
+            
+            // grabMoves = (c) => {
+            // for (a = 0; a < charDetails[c].moves.length; a++){
+            //      console.log(charDetails[c].moves[a]);
+                
+            // }
+            // }
+            // grabMoves(2);
+            // for(a=0; a < charArray.length; a++){
+            //     movesArray.push(charArray[a].moves);
+            // }
+            
+            // displayMoves = (c) => {
+            //     for(b = 0; b < movesArray.length; b++)
+            //     console.log(movesArray[b]);
+            //     // $('.char0').append(movesArray[b][c].notation)
+            // }
+            // displayMoves(0);
+        
+             
+            // displayMoves = (c) => {
+            //     for(b = 0; b < movesArray.length; b++)
+            //     console.log(movesArray[b][c]);
+            // }
+            // displayMoves(c);
+        
+
 
 
 },
@@ -109,7 +158,9 @@ charList: () => {
         home.style.display="block";
     },
     ui: () => {
-
+            //  $('.appChar').append("<ul class = 'objList'></ul>");
+            //  $('.appChar').append("<li class = 'charMoves list-group-item'>Moves</li>");
+            //  $('.appChar').append("<li class = 'charGifs list-group-item'>Gifs</li>");
                 let charHeadValue;
                 let charBodyValue;
 
@@ -139,7 +190,27 @@ charList: () => {
                     $('.modal-header p').remove();
                     $('.modal-body').removeClass("body-box" + charBodyValue);
                     $('.modal-body p').remove();
+                    $('.modal-body div').remove();
+                    gifArray = [];
              });
+
+            //  $('.appChar').on('click', function () {
+            //      let check = $(this).hasClass('on');
+            // if (check == false){
+            //     $(this).addClass('on');
+            //     $(this).removeClass('off');
+            //      console.log(this);
+            //  $(this).append("<ul class = 'objList'></ul>");
+            //  $(this).append("<li class = 'charMoves list-group-item''>Moves</li>");
+            //  $(this).append("<li class = 'charGifs list-group-item''>Gifs</li>");
+            //  }
+            // if (check == true){
+            //      $(this).removeClass('on');
+            //      $(this).addClass('off');
+            //      $(this).empty();
+            //  }   
+
+            //  });
              
     },
     scroll: () => {
@@ -163,7 +234,7 @@ charList: () => {
 init: () => {
        sourceJs.scriptsJs();
        setTimeout( ()  => { sourceJs.charList(); }, 1600);
-       setTimeout( ()  => { sourceJs.ui(); }, 1800);
+       setTimeout( ()  => { sourceJs.ui(); }, 2400);
        sourceJs.scroll();
 },
 };
