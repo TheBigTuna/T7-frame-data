@@ -90,9 +90,7 @@ charList: () => {
                     gifArray.push(g.length);
         }
            $('.gifBtn').on('click',function (){
-               console.log(this.id);
-           $(document).find('.body-box' + f).append("<div style='position: absolute; width: 440px; height: 250px; margin: 20px; background-image:url("+ this.id +")'>" + "</div>");
-                    
+           $(document).find('.body-box' + f).append("<div class = 'gifContainer'style='background-image:url("+ this.id +")'>" + "</div>");
                });
                 // console.log(e.gifs);
         }

@@ -135,6 +135,17 @@ header.masthead p {
 
 }
 
+.gifContainer{
+  position: absolute;
+  max-width: 360px;
+  height: 250px; 
+  z-index: -10;
+  top: 32em;
+  margin-bottom: 10px;
+  left: 0px;
+  border: 4px solid black;
+}
+
 }
 @media (min-width: 577px) and (max-width: 650px) {
   .modal-box{
@@ -503,4 +514,24 @@ header.masthead p {
   left: 15%;
 }
 
+.gifBtn{
+  width: 20%;
+  float: left;
+  font-size: 11px;
+  margin-bottom: 4px;
+  
+}
 
+.gifBtn button:hover {
+  cursor: pointer;
+}
+
+.gifContainer{
+  position: absolute;
+  width: 440px;
+  height: 250px; 
+  z-index: -10;
+  top: 32em;
+  margin-bottom: 10px;
+  border: 4px solid black;
+}
