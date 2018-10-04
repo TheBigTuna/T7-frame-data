@@ -37,10 +37,10 @@ charList: () => {
         let character = list.metadata.character;
         let gifs = list.gifs;
         
-           if(list.gifs == undefined){
-               let noGif = {name : name, game : game, moves: moves, character: character, gifs : "Not Available"};
-             return noGif;
-     }  
+    //        if(list.gifs == undefined){
+    //            let noGif = {name : name, game : game, moves: moves, character: character, gifs : "Not Available"};
+    //          return noGif;
+    //  }  
 
         return {
 
@@ -81,61 +81,24 @@ charList: () => {
         }
 
         displayGifs = (e,f) =>{
+            
             $(document).find('.header-box' + [f]).append("<p>" + e.metadata.name + "</p>");
-                        // console.log(characterArray[0][f].gifs)
-         for (let g in characterArray[0][f].gifs) {
-                //  console.log(g, characterArray[0][f].gifs[g]);
-                //  $(document).find('.body-box' + f).append("<div style='position: fixed; width: 20%; height: 20%; background-image:url("+ characterArray[0][f].gifs[g] +")'>" + "</div>");
-                    $(document).find('.body-box' + f).append("<div class='gifBtn' id = "+ characterArray[0][f].gifs[g] +" >" + "<button>" + g + "</button>" + "</div>");
+
+         for (let g in charDetails[f].gifs) {
+                
+                    $(document).find('.body-box' + f).append("<div class='gifBtn' id = "+ charDetails[f].gifs[g] +" >" + "<button>" + g + "</button>" + "</div>");
                     gifArray.push(g.length);
         }
-           $(document).find('.body-box' + f).append("<div class ='gifContainer'>" + "</div>");
+           $(document).find('.body-box' + f).append("<div class ='gifContainer'></div>");
            $('.gifBtn').on('click',function (){
                $('.gifContainer').css("background-image", "url(" + this.id + ")");  
-
+                   $('.modal-box').animate({   
+                        scrollTop: 0
+                    }, 900);
                
                });
-                // console.log(e.gifs);
         }
        
-
-
-            // Single Char
-
-            //  $('.charMoves').on('click', (e) => {
-            //  e.preventDefault()
-            // console.log(this);
-            // });
-            // <----------------------------------------------------------------------------------------------------------------------------------->
-
-            
-            // grabMoves = (c) => {
-            // for (a = 0; a < charDetails[c].moves.length; a++){
-            //      console.log(charDetails[c].moves[a]);
-                
-            // }
-            // }
-            // grabMoves(2);
-            // for(a=0; a < charArray.length; a++){
-            //     movesArray.push(charArray[a].moves);
-            // }
-            
-            // displayMoves = (c) => {
-            //     for(b = 0; b < movesArray.length; b++)
-            //     console.log(movesArray[b]);
-            //     // $('.char0').append(movesArray[b][c].notation)
-            // }
-            // displayMoves(0);
-        
-             
-            // displayMoves = (c) => {
-            //     for(b = 0; b < movesArray.length; b++)
-            //     console.log(movesArray[b][c]);
-            // }
-            // displayMoves(c);
-        
-
-
 
 },
     load: () => {
@@ -159,9 +122,7 @@ charList: () => {
         home.style.display="block";
     },
     ui: () => {
-            //  $('.appChar').append("<ul class = 'objList'></ul>");
-            //  $('.appChar').append("<li class = 'charMoves list-group-item'>Moves</li>");
-            //  $('.appChar').append("<li class = 'charGifs list-group-item'>Gifs</li>");
+
                 let charHeadValue;
                 let charBodyValue;
 
@@ -194,26 +155,9 @@ charList: () => {
                     $('.modal-body div').remove();
                     gifArray = [];
              });
-
-            //  $('.appChar').on('click', function () {
-            //      let check = $(this).hasClass('on');
-            // if (check == false){
-            //     $(this).addClass('on');
-            //     $(this).removeClass('off');
-            //      console.log(this);
-            //  $(this).append("<ul class = 'objList'></ul>");
-            //  $(this).append("<li class = 'charMoves list-group-item''>Moves</li>");
-            //  $(this).append("<li class = 'charGifs list-group-item''>Gifs</li>");
-            //  }
-            // if (check == true){
-            //      $(this).removeClass('on');
-            //      $(this).addClass('off');
-            //      $(this).empty();
-            //  }   
-
-            //  });
              
     },
+    
     scroll: () => {
             $(document).on('scroll',function(){
                 let pos = $(window).scrollTop();
