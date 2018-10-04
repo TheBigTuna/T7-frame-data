@@ -519,19 +519,32 @@ header.masthead p {
   float: left;
   font-size: 11px;
   margin-bottom: 4px;
-  
+  font-weight: 700;
+  position: relative;
+  top: 28em;
+  margin-bottom: 6px;
+}
+
+.gifBtn button{
+  background-color: #E5E2C3;
+  border-color: #E5E2C3;
+  padding: 5px;
+  color: black;
+  border-radius: 5px;
 }
 
 .gifBtn button:hover {
   cursor: pointer;
+  background-color: #D4D1B4;
+  border-color: #D4D1B4;
 }
 
 .gifContainer{
-  position: absolute;
   width: 440px;
   height: 250px; 
   z-index: -10;
-  top: 32em;
-  margin-bottom: 10px;
-  border: 4px solid black;
+  margin-bottom: 14px;
+  border: 2px solid black;
+  border-radius: 4px;
+  background-color: black;
 }

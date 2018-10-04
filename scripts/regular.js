@@ -89,8 +89,11 @@ charList: () => {
                     $(document).find('.body-box' + f).append("<div class='gifBtn' id = "+ characterArray[0][f].gifs[g] +" >" + "<button>" + g + "</button>" + "</div>");
                     gifArray.push(g.length);
         }
+           $(document).find('.body-box' + f).append("<div class ='gifContainer'>" + "</div>");
            $('.gifBtn').on('click',function (){
-           $(document).find('.body-box' + f).append("<div class = 'gifContainer'style='background-image:url("+ this.id +")'>" + "</div>");
+               $('.gifContainer').css("background-image", "url(" + this.id + ")");  
+
+               
                });
                 // console.log(e.gifs);
         }
