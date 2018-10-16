@@ -99,7 +99,7 @@ header.masthead p {
 @media (max-height: 550px) {
   .masthead{
     position: relative;
-    bottom: 120px;
+    bottom: 150px;
   }
 }
 
@@ -354,7 +354,7 @@ header.masthead p {
 
 
 .notation{
-  min-width: 300px;
+  min-width: 280px;
   float: left;
   box-sizing:border-box;
   font-size: 12px;
@@ -362,7 +362,7 @@ header.masthead p {
 }
 
 .hit-level, .damage, .on-block, .on-ch, .on-hit{
-  min-width: 150px;
+  min-width: 130px;
   float: left;
   box-sizing:border-box;
   font-size: 12px;

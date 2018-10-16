@@ -73,8 +73,8 @@ charList: () => {
                 $(document).find('.body-box' + c).append("<p class='hit-level'>" + b.moves[a].hit_level + "</p>");
                 $(document).find('.body-box' + c).append("<p class='damage'>" + b.moves[a].damage + "</p>");
                 $(document).find('.body-box' + c).append("<p class='on-block'>" + b.moves[a].on_block + "</p>");
-                $(document).find('.body-box' + c).append("<p class='on-ch'>" + b.moves[a].on_ch + "</p>");
                 $(document).find('.body-box' + c).append("<p class='on-hit'>" + b.moves[a].on_hit + "</p>");
+                $(document).find('.body-box' + c).append("<p class='on-ch'>" + b.moves[a].on_ch + "</p>");
             
              }
                 $(document).find('.header-box' + c).append("<p>" + b.metadata.name + "</p>");
@@ -178,8 +178,8 @@ charList: () => {
 
 init: () => {
        sourceJs.scriptsJs();
-       setTimeout( ()  => { sourceJs.charList(); }, 1600);
-       setTimeout( ()  => { sourceJs.ui(); }, 2400);
+       setTimeout( ()  => { sourceJs.charList(); sourceJs.load();}, 1900);
+       setTimeout( ()  => { sourceJs.ui();}, 2400);
        sourceJs.scroll();
 },
 };
