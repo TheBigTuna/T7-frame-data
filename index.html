@@ -14,7 +14,7 @@
     <script src="scripts/main.js"></script>
    
     </head>
-    <body>
+    <body onload="sourceJs.load();">
         <div id="loading">
               <img id="load-img" src="gifs/ajax-loader.gif" alt="Loading..." />
         </div>
@@ -41,21 +41,5 @@
     </header>
         </div>
         </div>
-        <div id ="app">
-            <div id = "prevBtn" class ="previous" onClick="sourceJs.prevClick()"><i class="fas fa-2x fa-arrow-left"></i></div>
-            <div class = "modal-background">
-                <div class = "modal-box">
-                    <div class= "modal-header">
-                        <div class= "modal-close">X</div>
-                    </div>
-                    <div class= "modal-body"></div>
-                </div>
-            </div>
-          <div class = "container">
-            <div id = "appList"></div>
-        </div>
-        <div class="scroll"><i class="fas fa-2x fa-arrow-up"></i></div>
-    </div>
-
     </body>
 </html>

@@ -102,24 +102,25 @@ charList: () => {
 
 },
     load: () => {
-            $("#loading").fadeOut(1000);
-            $("#home").fadeIn(500);
+            $("#loading").fadeOut(500);
+            $("#home").fadeIn(250);
     },
 
     homeClick: () => {
         let home = document.getElementById('home');
         let app = document.getElementById('app');
         let headerBtn = document.getElementById('headerBtn');
-        home.style.display="none";
-        app.style.display="block";
+        // window.location = "file:///C:/Users/Preferred%20Customer/Documents/code/T7-frame-data/frames.html";
+        window.location = "http://octaviusmoore.com/project2/frames.html"
 
 },  
     prevClick: () => {
         let home = document.getElementById('home');
         let app = document.getElementById('app');
         let prevBtn = document.getElementById('prevBtn');
-        app.style.display="none";
-        home.style.display="block";
+        // window.location = "file:///C:/Users/Preferred%20Customer/Documents/code/T7-frame-data/index.html";
+        window.location = "http://octaviusmoore.com/project2/index.html"
+
     },
     ui: () => {
 
@@ -178,8 +179,8 @@ charList: () => {
 
 init: () => {
        sourceJs.scriptsJs();
-       setTimeout( ()  => { sourceJs.charList(); sourceJs.load();}, 1900);
-       setTimeout( ()  => { sourceJs.ui();}, 2400);
+       setTimeout( ()  => { sourceJs.charList();}, 2700);
+       setTimeout( ()  => { sourceJs.ui();}, 2900);
        sourceJs.scroll();
 },
 };
