@@ -337,7 +337,7 @@ header.masthead p {
   header.masthead h1 {
     font-size: 4rem;
   }
-   .modal-box{
+   .modal-box {
     min-width: 1180px;
     max-height: 400px;
     position: absolute;
@@ -354,24 +354,34 @@ header.masthead p {
 
 
 .notation{
-  min-width: 280px;
+  /*min-width: 280px;*/
   float: left;
   box-sizing:border-box;
-  font-size: 12px;
+  font-size: 14px;
   overflow: hidden;
 }
 
 .hit-level, .damage, .on-block, .on-ch, .on-hit{
-  min-width: 130px;
+  /*min-width: 130px;*/
   float: left;
   box-sizing:border-box;
-  font-size: 12px;
+  font-size: 14px;
   overflow: hidden;
 
 }
 
-  #appList .appChar{
+ #appList .appChar{
   width: 60%;
+}
+
+
+td {
+  padding: 20px;
+}
+
+
+tr:nth-child(odd){
+  background-color: #eee;
 }
 }
 
@@ -615,3 +625,5 @@ header.masthead p {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
+
+

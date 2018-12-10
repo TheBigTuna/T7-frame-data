@@ -68,16 +68,24 @@ charList: () => {
         }
 
          displayMoves = (b,c) => {
+             $(document).find('.body-box' + c).append('<table class = charTable' + c +'><tbody class="notation"></tbody><tbody class="hit-level"></tbody><tbody class="damage"></tbody><tbody class="on-block"></tbody><tbody class="on-hit"></tbody></tbody><tbody class="on-ch"></tbody></table>');
              for(a = 0; a < b.moves.length; a++){
-                $(document).find('.body-box' + c).append("<p class='notation'>" + b.moves[a].notation + "</p>");
-                $(document).find('.body-box' + c).append("<p class='hit-level'>" + b.moves[a].hit_level + "</p>");
-                $(document).find('.body-box' + c).append("<p class='damage'>" + b.moves[a].damage + "</p>");
-                $(document).find('.body-box' + c).append("<p class='on-block'>" + b.moves[a].on_block + "</p>");
-                $(document).find('.body-box' + c).append("<p class='on-hit'>" + b.moves[a].on_hit + "</p>");
-                $(document).find('.body-box' + c).append("<p class='on-ch'>" + b.moves[a].on_ch + "</p>");
+                // $(document).find('.body-box' + c).append("<p class='notation'>" + b.moves[a].notation + "</p>");
+                // $(document).find('.body-box' + c).append("<p class='hit-level'>" + b.moves[a].hit_level + "</p>");
+                // $(document).find('.body-box' + c).append("<p class='damage'>" + b.moves[a].damage + "</p>");
+                // $(document).find('.body-box' + c).append("<p class='on-block'>" + b.moves[a].on_block + "</p>");
+                // $(document).find('.body-box' + c).append("<p class='on-hit'>" + b.moves[a].on_hit + "</p>");
+                // $(document).find('.body-box' + c).append("<p class='on-ch'>" + b.moves[a].on_ch + "</p>");'
+                   $(document).find('.notation').append('<tr><td>' + b.moves[a].notation + '</td></tr>');
+                   $(document).find('.hit-level').append('<tr><td>' + b.moves[a].hit_level + '</td></tr>');
+                   $(document).find('.damage').append('<tr><td>' + b.moves[a].damage + '</td></tr>');
+                   $(document).find('.on-block').append('<tr><td>' + b.moves[a].on_block + '</td></tr>');
+                   $(document).find('.on-hit').append('<tr><td>' + b.moves[a].on_hit + '</td></tr>');
+                   $(document).find('.on-ch').append('<tr><td>' + b.moves[a].on_ch + '</td></tr>');
+             
             
              }
-                $(document).find('.header-box' + c).append("<p>" + b.metadata.name + "</p>");
+                $(document).find('.header-box' + c).append("<h4>" + b.metadata.name + "</h4>");
         }
 
         displayGifs = (e,f) =>{
@@ -95,10 +103,8 @@ charList: () => {
                    $('.modal-box').animate({   
                         scrollTop: 0
                     }, 900);
-               
                });
-        }
-       
+        };      
 
 },
     load: () => {
@@ -110,16 +116,16 @@ charList: () => {
         let home = document.getElementById('home');
         let app = document.getElementById('app');
         let headerBtn = document.getElementById('headerBtn');
-        // window.location = "file:///C:/Users/Preferred%20Customer/Documents/code/T7-frame-data/frames.html";
-        window.location = "http://octaviusmoore.com/project2/frames.html"
+        window.location = "file:///C:/Users/Preferred%20Customer/Documents/code/T7-frame-data/frames.html";
+        // window.location = "http://octaviusmoore.com/project2/frames.html"
 
 },  
     prevClick: () => {
         let home = document.getElementById('home');
         let app = document.getElementById('app');
         let prevBtn = document.getElementById('prevBtn');
-        // window.location = "file:///C:/Users/Preferred%20Customer/Documents/code/T7-frame-data/index.html";
-        window.location = "http://octaviusmoore.com/project2/index.html"
+        window.location = "file:///C:/Users/Preferred%20Customer/Documents/code/T7-frame-data/index.html";
+        // window.location = "http://octaviusmoore.com/project2/index.html"
 
     },
     ui: () => {
@@ -154,6 +160,7 @@ charList: () => {
                     $('.modal-body').removeClass("body-box" + charBodyValue);
                     $('.modal-body p').remove();
                     $('.modal-body div').remove();
+                    $('.modal-body table').remove();
                     gifArray = [];
              });
              
